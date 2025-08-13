@@ -22,11 +22,11 @@ int main () {
 	
 	std::cout << "=== Incorrect Polymorphism ===" << std::endl;
 	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongCat* wrongCat = new WrongCat();
+	const WrongAnimal* wrongCat = new WrongCat();
 
 	std::cout << wrongCat->getType() << " " << std::endl;
 	wrongCat->makeSound();
-	wrongCat->makeSound();
+	wrongMeta->makeSound();
 
 	delete wrongMeta; // wrongAnimal sound
 	delete wrongCat; // wrongAnimal sound, instead of wrongCat
