@@ -1,25 +1,25 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat"){
-	std::cout << "A strange WrongCat has appeared!" << std::endl;
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
-	std::cout << "A duplicate of a WrongCat has been created!" << std::endl;
+	std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& other) {
-	std::cout << "One WrongCat is imitating another!" << std::endl;
+	std::cout << "WrongCat assignment operator called" << std::endl;
 	if (this != &other)
 	WrongAnimal::operator=(other);
 	return *this;
 }
 
 WrongCat::~WrongCat() {
-	std::cout << "A WrongCat has vanished!" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
 void WrongCat::makeSound() const {
-	std::cout << "Meow...? (something is definitely wrong...)" << std::endl;
+	std::cout << "Meow? (but it's wrong...)" << std::endl;
 }
 

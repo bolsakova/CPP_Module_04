@@ -1,30 +1,30 @@
 #include "Animal.hpp"
 
 Animal::Animal() : type("Animal") {
-	std::cout << "Animal defalut constructor called" << std::endl;
+	std::cout << "A mysterious animal has appeared!" << std::endl;
 }
 
 Animal::Animal(const std::string& type) : type(type) {
-	std::cout << "Animal parameterized constructor called" << std::endl;
+	std::cout << "A " << type << " has been created!" << std::endl;
 }
 
 Animal::Animal(const Animal& other) : type(other.type) {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "A copy of a " << other.type << " has been made!" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other) {
-	std::cout << "Animal assignment operator called" << std::endl;
+	std::cout << "An animal is transforming into a " << other.type << "!" << std::endl;
 	if (this != &other)
 		type = other.type;
 	return *this;
 }
 
 Animal::~Animal() {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "An animal has diappeared into the wild..." << std::endl;
 }
 
 void Animal::makeSound() const {
-	std::cout << "Animal makes a generic sound" << std::endl;
+	std::cout << "The " << type << " makes an indistinct sound." << std::endl;
 }
 
 const std::string& Animal::getType() const {
