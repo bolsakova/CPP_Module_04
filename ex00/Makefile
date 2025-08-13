@@ -1,22 +1,35 @@
-NAME = Animal
+NAME = polymorphism
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+FILES = main Animal Cat Dog WrongAnimal WrongCat
 
-OBJS = $(SRCS:.cpp=.o)
+SRCDIR = src
+# SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = $(addsuffix .cpp, $(FILES))
+
+vpath %.cpp src
+
+OBJDIR = obj
+OBJ = $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
+
+# INC = Animal.hpp Dog.hpp Cat.hpp
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR) # $(INC)
+	$(CXX) $(CXXFLAGS) -c -I inc $< -o $@
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 clean:
-	rm -rf $(OBJS)
+	rm -f $(OBJDIR)/*.o
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -rf $(NAME)
