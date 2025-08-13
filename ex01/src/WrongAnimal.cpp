@@ -1,4 +1,4 @@
-#include "WrongAnimal.hpp"
+#include "../inc/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal") {
 	std::cout << "A strange WrongAnimal has appeared!" << std::endl;

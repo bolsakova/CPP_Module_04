@@ -1,4 +1,4 @@
-#include "Brain.hpp"
+#include "../inc/Brain.hpp"
 
 Brain::Brain() {
 	std::cout << "A new brain has been created, full of empty ideas!" << std::endl;
@@ -22,5 +22,21 @@ Brain& Brain::operator=(const Brain& other) {
 }
 
 Brain::~Brain() {
-	std::cout << "A brain has been destroyed? along with all its ideas!" << std::endl;
+	std::cout << "A brain has been destroyed, along with all its ideas!" << std::endl;
+}
+
+std::string Brain::getIdea(int index) const {
+    if (index < 0 || index >= 100) {
+        std::cerr << "Error: Index out of bounds in getIdea(). Returning empty string." << std::endl;
+        return "";
+    }
+    return ideas[index];
+}
+
+void Brain::setIdea(int index, const std::string& idea) {
+    if (index < 0 || index >= 100) {
+        std::cerr << "Error: Index out of bounds in setIdea(). Idea not set." << std::endl;
+        return;
+    }
+    ideas[index] = idea;
 }

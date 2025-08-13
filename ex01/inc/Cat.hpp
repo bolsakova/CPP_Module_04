@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "../inc/Animal.hpp"
+#include "../inc/Brain.hpp"
 
 class Cat : public Animal {
 	
@@ -17,6 +17,7 @@ class Cat : public Animal {
 			~Cat();
 			
 			void makeSound() const override;
+			Brain* getBrain() const;
 };
 
 #endif

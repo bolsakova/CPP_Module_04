@@ -3,7 +3,7 @@ NAME = polymorphism
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
-FILES = main Animal Cat Dog WrongAnimal WrongCat
+FILES = main Animal Cat Dog WrongAnimal WrongCat Brain
 
 SRCDIR = src
 # SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp

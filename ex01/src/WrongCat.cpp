@@ -1,4 +1,4 @@
-#include "WrongCat.hpp"
+#include "../inc/WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat"){
 	std::cout << "A strange WrongCat has appeared!" << std::endl;
