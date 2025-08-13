@@ -1,4 +1,4 @@
-NAME = brain
+NAME = abstract
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
@@ -12,7 +12,6 @@ vpath %.cpp src
 
 OBJDIR = obj
 OBJ = $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
-
 
 all: $(NAME)
 
